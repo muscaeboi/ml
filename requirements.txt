@@ -1,0 +1,6 @@
+streamlit
+streamlit-drawable-canvas
+opencv-python==4.5.5.64
+matplotlib
+numpy
+pillow
