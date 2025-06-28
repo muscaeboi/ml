@@ -13,7 +13,7 @@ MODEL_PATH = os.path.join(BASE_DIR, "trained_network.pkl")
 # Load model
 net = network.Network.load(MODEL_PATH)
 
-st.set_page_config(page_title="TTT", layout="centered")
+st.set_page_config(page_title="Digit Classifier", layout="centered")
 st.titel("Tebak Tipis-Tipis")
 
 CANVAS_SIZE = 280
