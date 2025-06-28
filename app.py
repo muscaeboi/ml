@@ -13,8 +13,8 @@ MODEL_PATH = os.path.join(BASE_DIR, "trained_network.pkl")
 # Load model
 net = network.Network.load(MODEL_PATH)
 
-st.set_page_config(page_title="Digit Classifier", layout="centered")
-st.title("Digit Classifier Neural Network")
+st.set_page_config(page_title="TTT", layout="centered")
+st.titel("Tebak Tipis-Tipis")
 
 CANVAS_SIZE = 280
 DIGIT_SIZE = 28
@@ -63,7 +63,7 @@ def crop_and_center_pil(pil_img):
     return np.array(result) / 255.0
 
 # Prediction
-if st.button("Check digit"):
+if st.button("Cek hasil"):
     if canvas_result.image_data is not None:
         rgba = canvas_result.image_data.astype(np.uint8)
         pil_img = Image.fromarray(rgba)
@@ -73,12 +73,12 @@ if st.button("Check digit"):
         prediction = int(np.argmax(output))
 
         with right_col:
-            st.markdown("#### Processed (28×28)")
+            st.markdown("#### Output")
             display_img = Image.fromarray((processed * 255).astype(np.uint8)).resize(
                 (CANVAS_SIZE, CANVAS_SIZE), resample=Image.Resampling.NEAREST)
             st.image(display_img, width=CANVAS_SIZE, channels="L")
 
-        st.markdown(f"### 🔍 Prediction: **{prediction}**")
+        st.markdown(f"### Prediksi: **{prediction}**")
         st.bar_chart(output.flatten(), height=200)
     else:
-        st.warning("Please draw a digit first.")
+        st.warning("Tulis angka dulu brader.")
