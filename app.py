@@ -14,7 +14,7 @@ MODEL_PATH = os.path.join(BASE_DIR, "trained_network.pkl")
 net = network.Network.load(MODEL_PATH)
 
 st.set_page_config(page_title="Digit Classifier", layout="centered")
-st.titel("Tebak Tipis-Tipis")
+st.titel("Digit Classifier Neural Network")
 
 CANVAS_SIZE = 280
 DIGIT_SIZE = 28
